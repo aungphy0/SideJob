@@ -57,6 +57,23 @@ class DetailsViewController: UIViewController {
         self.dateLabel.text = newDate
         //print(self.dateLabel)
         
+        //to show the username
+        let user = homePost!["user"] as! PFObject
+        let namequery = PFQuery(className:"_User")
+        namequery.getObjectInBackground(withId: user.objectId!) { (userData: PFObject?, error: Error?) in
+            if let error = error {
+                //The query returned an error
+                print(error.localizedDescription)
+            } else {
+                //The object has been retrieved
+                //print(userData!["username"])
+                let name = userData!["username"]
+                //print(userData!["email"])
+                
+                self.usernameLabel.text = name as? String
+                //self.emailLabel.text = email as? String
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
