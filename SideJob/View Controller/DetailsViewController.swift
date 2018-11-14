@@ -19,7 +19,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var photoView: PFImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var contactNumberLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
     
@@ -68,13 +68,11 @@ class DetailsViewController: UIViewController {
                 //The object has been retrieved
                 //print(userData!["username"])
                 let name = userData!["username"]
-                //print(userData!["email"])
-                
                 self.usernameLabel.text = name as? String
-                //self.emailLabel.text = email as? String
             }
         }
-    }
+        
+    }//viewDidLoad()
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
