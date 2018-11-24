@@ -107,6 +107,10 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
+    @IBAction func tapToHideKeyboard(_ sender: Any) {
+        
+        view.endEditing(true)
+    }
     /*
      // MARK: - Navigation
      

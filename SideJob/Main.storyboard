@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27o-ZO-c3u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27o-ZO-c3u">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UG3-xF-faA">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username " textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UG3-xF-faA">
                                 <rect key="frame" x="64" y="203" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgN-CG-tzy">
                                 <rect key="frame" x="64" y="287" width="246" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyS-Sr-LnI">
                                 <rect key="frame" x="168" y="407" width="38" height="30"/>
@@ -56,7 +56,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="8eC-9b-Jr6"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q71-HE-o4B" appends="YES" id="SYb-dt-Jgf"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="fgN-CG-tzy" id="0uv-76-JGc"/>
@@ -65,6 +69,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2i-vF-E0F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q71-HE-o4B">
+                    <connections>
+                        <action selector="tapToHideKeyboard:" destination="27o-ZO-c3u" id="jDN-bu-E3d"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-498" y="-412"/>
         </scene>
@@ -297,7 +306,11 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.14517788189180669" green="0.94942807617081992" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="O1W-9G-JPo"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aG6-Id-JAM" appends="YES" id="cvg-WQ-cLc"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="f3D-7e-g0K">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="avb-7q-4nE">
@@ -325,6 +338,11 @@
                 <tapGestureRecognizer id="1BO-vh-42z">
                     <connections>
                         <action selector="cameraOption:" destination="HA7-36-TYS" id="9tG-XC-68n"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aG6-Id-JAM">
+                    <connections>
+                        <action selector="tapToHideKeyboard:" destination="HA7-36-TYS" id="IHI-Pc-03R"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -532,7 +550,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gL3-4Z-gTz"/>
+        <segue reference="cJu-uG-CV0"/>
         <segue reference="lBD-cJ-iGk"/>
     </inferredMetricsTieBreakers>
 </document>
