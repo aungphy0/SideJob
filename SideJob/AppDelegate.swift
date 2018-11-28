@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "SideJob"
-                configuration.clientKey = "apple2"  // set to nil assuming you have not set clientKey
-                configuration.server = "https://murmuring-oasis-60855.herokuapp.com/parse"
+                configuration.applicationId = "AppId"
+                configuration.clientKey = "clientKey"  // set to nil assuming you have not set clientKey
+                configuration.server = "https://appname.herokuapp.com/parse"
             })
         )
 
