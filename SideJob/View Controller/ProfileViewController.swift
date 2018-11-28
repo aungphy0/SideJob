@@ -13,6 +13,9 @@ class ProfileViewController: UIViewController {
     
     
     
+    @IBOutlet weak var profileUsername: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    
     @IBAction func logoutButon(_ sender: Any) {
         PFUser.logOutInBackground(block : { (error) in
             if let error = error {
@@ -26,9 +29,27 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        //self.tableView.dataSource = self
+        //self.tableView.rowHeight = 200
+        //self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        let profileData = PFUser.current()
+        print(profileData?.username! as Any)
+        print(profileData?.email! as Any)
+        self.profileUsername.text = profileData?.username
+        self.userEmail.text = profileData?.email
+        self.userEmail.sizeToFit()
+        self.userEmail.textAlignment = NSTextAlignment.center
     }
+    
+    /***
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "jobInProfile", for: indexPath) as! ProfileTableViewCell
+        return cell
+    } ***/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

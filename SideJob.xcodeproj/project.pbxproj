@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12D7DE072E906D87570AFAB4 /* Pods_SideJobUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0B582E0BA7BFE7A7285CA6 /* Pods_SideJobUITests.framework */; };
 		3D12C4C0219A6E08005F9CE6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12C4BF219A6E08005F9CE6 /* DetailsViewController.swift */; };
+		3D4E6C5E21ACF1FB00072BDD /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E6C5D21ACF1FB00072BDD /* ProfileTableViewCell.swift */; };
 		3D5F8B462197918900DB4E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F8B452197918900DB4E36 /* AppDelegate.swift */; };
 		3D5F8B482197918900DB4E36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F8B472197918900DB4E36 /* ViewController.swift */; };
 		3D5F8B4D2197918B00DB4E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F8B4C2197918B00DB4E36 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		3211E22ACA8DAA583B2D9024 /* Pods_SideJobTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideJobTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBA76E4B981DF12F338D01F /* Pods-SideJobUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideJobUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SideJobUITests/Pods-SideJobUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D12C4BF219A6E08005F9CE6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3D4E6C5D21ACF1FB00072BDD /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		3D5F8B422197918900DB4E36 /* SideJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5F8B452197918900DB4E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D5F8B472197918900DB4E36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE523FF2197942E00667695 /* HomeTableViewCell.swift */,
+				3D4E6C5D21ACF1FB00072BDD /* ProfileTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				3DE523FC219793F000667695 /* ProfileViewController.swift in Sources */,
 				3DE523FA219793D200667695 /* ComposeViewController.swift in Sources */,
 				3D12C4C0219A6E08005F9CE6 /* DetailsViewController.swift in Sources */,
+				3D4E6C5E21ACF1FB00072BDD /* ProfileTableViewCell.swift in Sources */,
 				3DE523FE2197940100667695 /* RegisterViewController.swift in Sources */,
 				3DE523F8219793AC00667695 /* LoginViewController.swift in Sources */,
 				3D5F8B482197918900DB4E36 /* ViewController.swift in Sources */,

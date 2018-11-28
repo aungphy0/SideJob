@@ -47,12 +47,12 @@ class DetailsViewController: UIViewController {
         
         
         self.contactNumberLabel.text = homePost!["number"] as? String
-        self.dateLabel.text = homePost!["date"] as? String
+        //self.dateLabel.text = homePost!["date"] as? String
         self.descriptionLabel.text = homePost!["description"] as? String
         
         //to show the date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy" //Your New Date format as per requirement change it own
+        dateFormatter.dateFormat = "MMM d, yyyy 'at' h:mm a" //Your New Date format as per requirement change it own
         let newDate = dateFormatter.string(from: homePost!["date"] as! Date) //pass Date here
         self.dateLabel.text = newDate
         //print(self.dateLabel)
@@ -71,15 +71,42 @@ class DetailsViewController: UIViewController {
                 self.usernameLabel.text = name as? String
             }
         }
-        
     }//viewDidLoad()
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    /*** ///PICK BUTTON///
+    @IBAction func pickButton(_ sender: Any) {
+        
+        let pick = PFObject(className: "Pick")
+        pick["user"] = self.usernameLabel.text
+        pick["photo"] = self.photoView.file
+        pick["number"] = self.contactNumberLabel.text
+        pick["date"] = self.dateLabel.text
+        pick["description"] = self.descriptionLabel.text
+        pick["pick_user"] = PFUser.current()?.objectId
+        
+        pick.saveInBackground{ (success: Bool, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            }else{
+                print("Pick saved successfully!")
+                //pick alert
+                let alertController = UIAlertController(title: "Thank You!", message:
+                    "You Picked a Job.", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                //self.performSegue(withIdentifier: "cancelSegue", sender: nil)
+            }
+        }
+        
+    } ***/  ///PICK BUTTON/// 
     /*
     // MARK: - Navigation
 

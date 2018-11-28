@@ -53,6 +53,7 @@ class HomeTableViewCell: UITableViewCell {
             let photo = homePost["photo"] as! PFObject
             self.photoView.file = photo["image"] as? PFFile
             self.photoView.loadInBackground()
+            
         }
     }
     
